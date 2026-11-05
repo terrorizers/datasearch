@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datasearch Views</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg: #f3f5f7; --surface: #ffffff; --ink: #18222e; --muted: #5f6c7b; --line: #d8dee5; --accent: #2b5d8a;
+  --font-ui: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #11161c; --surface: #18202a; --ink: #e3e8ee; --muted: #93a0ae; --line: #2a3542; --accent: #7fb0dc; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #11161c; --surface: #18202a; --ink: #e3e8ee; --muted: #93a0ae; --line: #2a3542; --accent: #7fb0dc; color-scheme: dark; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 15px; line-height: 1.5; }
+.page { max-width: 820px; margin: 0 auto; padding: 36px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px)); display: grid; gap: 22px; }
+.eyebrow { font: 500 11px/1 var(--font-data); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 6px 0 0; font-weight: 800; font-size: clamp(28px, 5vw, 40px); line-height: 1.1; }
+.lead { margin: 0; color: var(--muted); max-width: 62ch; }
+.views { display: grid; gap: 12px; }
+a.view { display: grid; gap: 4px; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; color: inherit; text-decoration: none; }
+a.view:hover, a.view:focus-visible { border-color: var(--accent); outline: none; }
+a.view h2 { margin: 0; font-size: 18px; font-weight: 800; color: var(--accent); }
+a.view p { margin: 0; color: var(--muted); font-size: 14px; }
+a.view .k { font: 12px var(--font-data); color: var(--muted); }
+.foot { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="eyebrow">Massive 1m bars · xyz stocks</div>
+    <h1>Datasearch</h1>
+    <p class="lead">Simple trading behaviours and intraday patterns, measured over the full 1-minute history of the
+    US stocks that have a market on Hyperliquid's xyz DEX.</p>
+  </header>
+  <div class="views">
+    <a class="view" href="buy_the_dip.html">
+      <h2>Buy the dip</h2>
+      <p>Buy after a fall from the high, sell at a fixed gain. Monthly returns per stock, with every down/up setting per stock.</p>
+      <span class="k">behaviour backtest · 10 × 10 grid</span>
+    </a>
+    <a class="view" href="run_reversal.html">
+      <h2>Run reversal</h2>
+      <p>Price cut into bricks; fade a run of n bricks, long after down runs and short after up runs.</p>
+      <span class="k">behaviour backtest · step % × run length</span>
+    </a>
+    <a class="view" href="last_ten_minutes.html">
+      <h2>Last ten minutes</h2>
+      <p>The average move from 15:50 to the close, as a function of how the day has gone so far, by stock and category.</p>
+      <span class="k">intraday study · −7% to +7%</span>
+    </a>
+  </div>
+  <p class="foot">No fees, spread or slippage in any backtest. Not investment advice.</p>
+</div>
+</body>
+</html>
